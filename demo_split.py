@@ -22,7 +22,7 @@ if '__main__' == __name__:
     from open3d import read_point_cloud, write_point_cloud
     
     name, __, ext = input('input cloud: ').rpartition('.')
-    scale = input('color scale: ')
+    scale = input('colour scale: ')
     scale = float(scale) if scale else 1.0
 
     pcd = read_point_cloud(name + '.' + ext)
