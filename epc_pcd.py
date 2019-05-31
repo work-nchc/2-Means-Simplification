@@ -11,7 +11,7 @@ if len(argv) > 3:
 else:
     name_pcd = input('input cloud: ')
     r_min = float(input('min radius: '))
-    s = float(input('color scale: '))
+    s = float(input('colour scale: '))
 
 t = time()
 
