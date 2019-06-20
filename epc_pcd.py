@@ -11,10 +11,13 @@ if len(argv) > 3:
 else:
     name_pcd = input('input cloud: ')
     r_min = float(input('min radius: '))
-    s = float(input('colour scale: '))
+    s = float(input('color scale: '))
 
 t = time()
 
+radius1_mean = lambda p: abs(p - p.mean(0)).sum(1).mean()
+radius1 = lambda p: abs(p - p.mean(0)).sum(1).max()
+radius_mean = lambda p: (((p - p.mean(0)) ** 2).sum(1) ** 0.5).mean()
 radius = lambda p: ((p - p.mean(0)) ** 2).sum(1).max() ** 0.5
 
 pcd = read_point_cloud(name_pcd)
@@ -22,6 +25,9 @@ epc = [(concatenate((pcd.points, pcd.colors), 1), float('inf'))]
 
 i = 0
 for cloud, r_sup in epc:
+    r_color_mean = radius1_mean(cloud[:,3:])
+    r_color = radius1(cloud[:,3:])
+    r_mean = radius_mean(cloud[:,:3])
     r = min(radius(cloud[:,:3]), r_sup)
     if r > r_min:
         label = k_means(
@@ -30,12 +36,12 @@ for cloud, r_sup in epc:
         epc.append((cloud.compress(label, 0), r))
     else:
         r = float('-inf')
-    epc[i] = append(cloud.mean(0), (r_sup, r))
+    epc[i] = append(cloud.mean(0), (r_color_mean, r_color, r_mean, r_sup, r))
     i += 1
 
 epc = array(epc)
 r_pts = sorted(epc[:,-1]) # r_pts[-n] <= radius < r_pts[1-n]
 
 print(len(epc), time() - t)
-save('epc_' + name_pcd, epc)
-save('r_pts_' + name_pcd, r_pts)
+save('epc_' + name_pcd.rpartition('.')[0], epc)
+save('r_pts_' + name_pcd.rpartition('.')[0], r_pts)
