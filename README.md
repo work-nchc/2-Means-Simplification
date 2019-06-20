@@ -6,9 +6,10 @@ Tested in Python 3.6
 Dependencies: NumPy, scikit-learn, Open3D
 
 ---
-Simplify Point Cloud (Coverting to Effective Point Cloud):
+Converting to Effective-Point Cloud:
 
 ```
 PATH/TO/python.exe epc_pcd.py [input.pcd r_min scale]
 ```
 
+Convert the original point cloud [input.pcd] into an effective-point cloud the resolution of which is shorter than [r_min] using 
