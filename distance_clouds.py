@@ -10,9 +10,9 @@ def dist_pcd(dense, sparse):
     dist_colors = abs(array(sparse.colors)[ind.flat] - dense.colors).sum(1)
     return (
         dist.max(),
-        dist.mean(),
+        dist.sum(),
         dist_colors.max(),
-        dist_colors.mean(),
+        dist_colors.sum(),
     )
 
 if '__main__' == __name__:

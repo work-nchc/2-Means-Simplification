@@ -21,9 +21,9 @@ def main(radius, name):
     print(
         pcd,
         cloud[:,-1].max(),
-        cloud[:,-3].mean(),
+        cloud[:,-3].sum(),
         cloud[:,-4].max(),
-        cloud[:,-5].mean(),
+        cloud[:,-5].sum(),
     )
     return None
 
