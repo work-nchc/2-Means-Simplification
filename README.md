@@ -12,9 +12,14 @@ Original Point Cloud → Effective-Point Cloud:
 PATH/TO/python.exe epc_pcd.py [input.pcd r_min scale]
 ```
 
-Convert the original point cloud [input.pcd] into an effective-point cloud epc_[input].npy by recursive 2-means clusterings.  The resolution of the effective-point cloud is shorter than [r_min].  Clusterings are performed in 6D xyzrgb spaces, the rgb scales of which are directly proportional to [scale].  There will be an input dialogue if arguments are insufficient.
+Convert the original point cloud [input.pcd] into an effective-point cloud epc_[input].npy by recursive 2-means clusterings.  The resolution of the effective-point cloud is shorter than [r_min].  Clusterings are performed in 6D XYZRGB spaces, the RGB scales of which are directly proportional to [scale].  There will be an input dialogue if arguments are insufficient.
 
-An r_pts_[input].npy will also be generated presenting the relationship between the number of points and the radius.  The length of epc_[input].npy and the processing time will be printed on the standard output after running this script.  The effective-point cloud is a 2D array, one point per row.  
+An r_pts_[input].npy will also be generated presenting the relationship between the number of points and the radius.  The number of rows in epc_[input].npy and the processing time will be printed on the standard output after running this script.  The effective-point cloud epc_[input].npy is a 2D array, one point per row.  The columns in epc_[input].npy represent the following data:
+
+```
+X Y Z R G B r_color_mean r_color r_mean r_sup r
+```
+
 
 ---
 Effective-Point Cloud → Simplified Point Cloud:
