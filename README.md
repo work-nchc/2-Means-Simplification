@@ -16,9 +16,9 @@ Convert the original point cloud [input.pcd] into an effective-point cloud epc_[
 
 An r_pts_[input].npy will also be generated presenting the relationship between the number of points and the radius.  The number of rows in epc_[input].npy and the processing time will be printed on the standard output after running this script.  The effective-point cloud epc_[input].npy is a 2D array, one point per row.  The columns in epc_[input].npy represent the following data:
 ```
-X Y Z R G B r_color_mean r_color r_mean r_sup r
+X Y Z R G B r_color_sum r_color r_sum r_sup r
 ```
-r_color_mean, r_color, and r_mean are 
+r_color_sum, r_color, and r_sum are statistical data for comparisons with different algorithms.
 
 ---
 Effective-Point Cloud → Simplified Point Cloud:
