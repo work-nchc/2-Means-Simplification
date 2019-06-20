@@ -6,7 +6,7 @@ Tested in Python 3.6
 Dependencies: NumPy, scikit-learn, Open3D
 
 ---
-Converting to Effective-Point Cloud:
+→ Effective-Point Cloud:
 
 ```
 PATH/TO/python.exe epc_pcd.py [input.pcd r_min scale]
