@@ -42,6 +42,7 @@ for cloud, r_sup in epc:
 epc = array(epc)
 r_pts = sorted(epc[:,-1]) # r_pts[-n] <= radius < r_pts[1-n]
 
-print(len(epc), time() - t)
+print('length:', len(epc))
+print('processing time:', time() - t, 'sec')
 save('epc_' + name_pcd.rpartition('.')[0], epc)
 save('r_pts_' + name_pcd.rpartition('.')[0], r_pts)

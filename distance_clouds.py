@@ -24,4 +24,4 @@ if '__main__' == __name__:
     t = time()
     pcd_dense = read_point_cloud(name_dense)
     print(*dist_pcd(pcd_dense, read_point_cloud(name_sparse)))
-    print(time() - t)
+    print('processing time:', time() - t, 'sec')
