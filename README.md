@@ -23,12 +23,12 @@ r_color_sum, r_color, and r_sum are statistical data for comparisons with differ
 ---
 Effective-Point Cloud → Simplified Point Cloud:
 
-given resolution:
+given resolution [r]:
 ```
 PATH/TO/python.exe pcd_epc.py [epc_input.npy r output.pcd]
 ```
 
-given number of points:
+given number of [points] and [r_pts_input.npy]:
 ```
 PATH/TO/python.exe pcd_epc_pts.py [epc_input.npy r_pts_input.npy points output.pcd]
 ```
