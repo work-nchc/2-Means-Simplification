@@ -36,4 +36,11 @@ PATH/TO/python.exe pcd_epc_pts.py [epc_input.npy r_pts_input.npy points output.p
 Extract a simplified point cloud [output.pcd] from the effective-point cloud [epc_input.npy].  There will be an input dialogue if arguments are insufficient.  The number of points in [output.pcd] and the statistical data r, r_sum, r_color, r_color_sum will be printed on the standard output after running this script.
 
 ---
-2019-06-20 by 1803031@narlabs.org.tw
+Other Scripts:
+
+demo_split.py: splitting a point cloud by 2-means clustering
+
+distance_clouds.py: computing statistical data r, r_sum, r_color, r_color_sum for other point cloud simplification algorithms
+
+---
+2019-06-24 by 1803031@narlabs.org.tw
